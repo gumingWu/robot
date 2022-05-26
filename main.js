@@ -4,9 +4,9 @@ const fs = require("fs");
 const id = (~~(Math.random() * 100000)).toString(); // 获取小于10w的数字
 const url = `https://robohash.org/${id}`;
 const dirPath = path.resolve(__dirname, "pic");
-const date = new Date().toLocaleDateString().replaceAll("/", "-");
+const date = new Date().toLocaleDateString("cn").replaceAll("/", "-");
 const timestamp = new Date()
-  .toLocaleTimeString(undefined, {
+  .toLocaleTimeString("cn", {
     hour12: false,
   })
   .replaceAll(":", "-");
