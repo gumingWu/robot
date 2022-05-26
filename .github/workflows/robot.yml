@@ -1,0 +1,28 @@
+name: automatic-save-robot
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    branches: [main]
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: "Checkout code"
+      uses: actions/checkout@v1
+
+    - name: "Set node"
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+
+    - name: "Install"
+      run: npx pnpm i
+
+    - name: "Run bash"
+      run: node main.js
+
+    - name: "Commit"
+      uses: EndBug/add-and-commit@v4
+      with:
+        message: "chroe: save robot"
+        add: "pic/*"
