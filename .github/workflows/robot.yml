@@ -27,3 +27,5 @@ jobs:
         with:
           message: "chroe: save robot"
           add: "pic/*"
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
