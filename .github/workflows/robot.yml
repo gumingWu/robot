@@ -1,7 +1,7 @@
 name: automatic-save-robot
 on:
   schedule:
-    - cron: "0 17 * * *"
+    - cron: "0 0 * * *"
 jobs:
   bots:
     runs-on: ubuntu-latest
