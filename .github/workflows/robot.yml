@@ -14,8 +14,10 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: "Install"
-        run: npx pnpm i
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
       - name: "Run bash"
         run: node main.js
